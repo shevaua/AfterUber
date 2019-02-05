@@ -1,0 +1,15 @@
+{
+  "name": "afteruber",
+  "version": "1.0.1",
+  "description": "test task",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "dependencies": {
+    "config": "^3.0.1",
+    "express": "^4.16.4",
+    "node-static": "^0.7.11"
+  }
+}
