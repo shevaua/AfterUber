@@ -1,0 +1,7 @@
+1) installing environemnt      1 - 2 hrs
+2) Writing service             0.5 - 1 hr
+3) Writing component and form  1.5 - 3 hrs
+4) Writing back-end service    1 - 2 hrs
+5) Wrap endpoint               1 - 2 hrs
+
+Total: 5 - 10 hrs
