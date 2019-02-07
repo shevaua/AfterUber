@@ -157,17 +157,26 @@ var actions = {
                                 
                             })
                             .catch((error) => {
-                                res.json({ success:false });
+                                res.json({ 
+                                    success: false,
+                                    error: 'can not pull prices from uber api'
+                                });
                             });
 
                     })
                     .catch((error) => {
-                        res.json({ success:false });
+                        res.json({ 
+                            success: false,
+                            error: 'can not determine coordinates for ' + to
+                        });
                     });
 
             })
             .catch((error) => {
-                res.json({ success:false });
+                res.json({ 
+                    success: false,
+                    error: 'can not determine coordinates for ' + from
+                });
             });
         
     },

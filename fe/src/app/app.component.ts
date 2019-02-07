@@ -39,6 +39,7 @@ export class AppComponent {
     }
 
     this.inProgress = true;
+    this.prices = [];
 
     this.priceApi.getPrice(this.from.value, this.to.value)
       .subscribe(
@@ -48,9 +49,9 @@ export class AppComponent {
           {
             this.prices = response.prices;
           }
-          else
+          else if(response.error)
           {
-            this.prices;
+            console.log(response.error);
           }
         }, 
         (response) => { 
