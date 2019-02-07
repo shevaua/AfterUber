@@ -1,0 +1,24 @@
+If you had more time, what would you have changed in your code?
+
+    1) I would be changed UI on FE
+    2) I would be added added more logging on BE
+    3) I would be changed responses to be the same (have equal shape)
+    4) I would be added comments
+    5) I would be added more validation of incoming data
+
+What would you have changed in the UI you created?
+
+    1) price cards
+    2) color scheme
+
+What are the problems that you can foresee if the company needs to scale? 
+(Be also specific to changes you would have made in your code for scaling. 
+You don't need to implement these changes.)
+
+    1) many request for determine coordinates of address
+        
+        I would be implemented caching for coordinates
+
+    2) there is no any logging on BE. It would be hard to determine any issues.
+
+        I would be implemented more logging
