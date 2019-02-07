@@ -105,6 +105,27 @@ var uberService = {
     }
 };
 
+var afterUberService = {
+    prefix: modules.config.get('company.prefix'),
+    off: modules.config.get('company.off'),
+    changePrice: (prices) => {
+        var result = [];
+        prices.forEach((price) => {
+            
+            result.push({
+                name: afterUberService.prefix + price.display_name,
+                price: afterUberService.getPriceFor(price.high_estimate)
+            });
+
+        });
+        return result;
+    },
+    getPriceFor: (price) => {
+        newPrice = Math.ceil(price / 100 * (100 - afterUberService.off));
+        return newPrice;
+    }
+};
+
 var actions = {
     price: function(req, res) {
         
@@ -122,7 +143,12 @@ var actions = {
 
                         uberService.estimatePrice(start, end)
                             .then((prices) => {
-                                res.json({ success:true, prices: prices });
+                                
+                                res.json({ 
+                                    success:true, 
+                                    prices: afterUberService.changePrice(prices),
+                                });
+                                
                             })
                             .catch((error) => {
                                 res.json({ success:false });
