@@ -1,3 +1,38 @@
-<button [disabled]="inProgress" (click)="submit()">click me</button>
+<div class="after-form">
 
-<router-outlet></router-outlet>
+    <mat-form-field appearance="outline">
+        <mat-label>From</mat-label>
+        <input matNativeControl placeholder="Address" [formControl]="from" required>
+        <mat-error *ngIf="from.invalid">
+            Min length - 3
+        </mat-error>
+    </mat-form-field>
+      
+    <mat-form-field appearance="outline">
+        <mat-label>To</mat-label>
+        <input matNativeControl placeholder="Address" [formControl]="to" required>
+        <mat-error *ngIf="to.invalid">
+            Min length - 3
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="inProgress" (click)="submit()">
+        Activate
+    </button>
+
+    <div [hidden]="!inProgress" class="progress-bar">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+
+</div>
+
+<div class="after-content">
+    <mat-card *ngFor="let price of prices">
+        <mat-card-header>
+            {{ price.name }}
+        </mat-card-header>
+        <mat-card-title>
+            {{ price.price | price }}
+        </mat-card-title>
+    </mat-card>
+</div>

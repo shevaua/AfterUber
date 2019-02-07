@@ -10,6 +10,7 @@ import { FormControl, Validators, EmailValidator } from '@angular/forms';
 export class AppComponent {
 
   private inProgress = false;
+  private prices = [];
 
   private from = new FormControl('', [ 
     Validators.required,
@@ -43,7 +44,15 @@ export class AppComponent {
       .subscribe(
         (response) => { 
           this.inProgress = false;
-          console.log(response); }, 
+          if(response.success)
+          {
+            this.prices = response.prices;
+          }
+          else
+          {
+            this.prices;
+          }
+        }, 
         (response) => { 
           this.inProgress = false;
           console.log(response); 

@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+$mobileWidth: 768px;
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body
+{
+    margin: 0px;
+}
+
+@media screen
+{
+    app-root
+    {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100vh;
+
+        .after-form
+        {
+            display: flex;
+            flex-direction: column;
+            max-width: 50%;
+            padding: 10px;
+            width: 350px;
+            background-color: gray;
+        }
+        .after-content
+        {
+            padding: 10px;
+            flex-grow: 1;
+
+            mat-card-title
+            {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobileWidth)
+{
+    app-root
+    {
+        flex-direction: column;
+        .after-form
+        {
+            width: auto;
+            max-width: none;
+        }
+    }
+}

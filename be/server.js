@@ -20,8 +20,8 @@ var latlngService = {
     get: (address) => {
         return new Promise((resolve, reject) => {
 
-            resolve(latlngService.testdata[latlngService.counter++ % latlngService.testdata.length]);
-            return;
+            // resolve(latlngService.testdata[latlngService.counter++ % latlngService.testdata.length]);
+            // return;
 
             var form = new modules.formdata();
                 form.append('c1', address);
@@ -70,8 +70,8 @@ var uberService = {
         
         return new Promise((resolve, reject) => {
             
-            resolve(uberService.testdata[uberService.counter++ % uberService.testdata.length]);
-            return;
+            // resolve(uberService.testdata[uberService.counter++ % uberService.testdata.length]);
+            // return;
 
             modules.axios.get(
                 'https://api.uber.com/v1.2/estimates/price',
