@@ -1,0 +1,18 @@
+
+# Make sure you have @angular/cli package
+# installation:
+npm install -g @angular/cli
+
+# Go to project directory
+cd <project_dir>
+
+# run installation script
+bash install.sh
+
+# put server key for uber into config/development.json file accross the 
+# "uber": {
+#   "server_key": "<put your key here>"
+# },
+
+# run server script
+npm start
