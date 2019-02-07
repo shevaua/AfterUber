@@ -1,0 +1,19 @@
+{
+    "server": {
+        "port": 4280 
+    },
+    "dirs": {
+        "public": "./public"
+    },
+    "uber": {
+        "server_key": ""
+    },
+    "company": {
+        "prefix": "After",
+        "off": 20
+    },
+    "coords": [
+    ],
+    "prices": [
+    ]
+}

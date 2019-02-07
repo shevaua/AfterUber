@@ -20,8 +20,11 @@ var latlngService = {
     get: (address) => {
         return new Promise((resolve, reject) => {
 
-            // resolve(latlngService.testdata[latlngService.counter++ % latlngService.testdata.length]);
-            // return;
+            if(process.env.NODE_ENV != 'production')
+            {
+                resolve(latlngService.testdata[latlngService.counter++ % latlngService.testdata.length]);
+                return;
+            }
 
             var form = new modules.formdata();
                 form.append('c1', address);
@@ -70,8 +73,11 @@ var uberService = {
         
         return new Promise((resolve, reject) => {
             
-            // resolve(uberService.testdata[uberService.counter++ % uberService.testdata.length]);
-            // return;
+            if(process.env.NODE_ENV != 'production')
+            {
+                resolve(uberService.testdata[uberService.counter++ % uberService.testdata.length]);
+                return;
+            }
 
             modules.axios.get(
                 'https://api.uber.com/v1.2/estimates/price',
@@ -200,3 +206,8 @@ App.get('/api/*', (req, res) => {
 
 var Server = modules.http.createServer(App);
     Server.listen(modules.config.get('server.port'));
+
+console.log(
+    'Listen on :' + modules.config.get('server.port')
+    + ' in ' + ((process.env.NODE_ENV == 'production') ? 'prod': 'dev') + ' mode'
+);

@@ -9,10 +9,17 @@ cd <project_dir>
 # run installation script
 bash install.sh
 
-# put server key for uber into config/development.json file accross the 
+# put server key for uber into config/production.json file accross the
+#
 # "uber": {
 #   "server_key": "<put your key here>"
 # },
 
 # run server script
+cd <project_dir>/be
+
+# DEV MODE
 npm start
+
+# PROD MODE
+NODE_ENV=production npm start
